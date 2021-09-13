@@ -16,8 +16,6 @@ function main(){
 
     places=[{"id":1,"user":"Radu","title":"favorite beach","latitude":62.6126,"longitude":29.696},{"id":2,"user":"Jyri","title":"favorite pizza place","latitude":62.6009,"longitude":29.7598},{"id":3,"user":"Petri","title":"favorite hiking place","latitude":62.6277,"longitude":29.8759},{"id":4,"user":"Radu","title":"favorite swimming pool","latitude":62.6031,"longitude":29.7443},{"id":32,"user":"Radu","title":"favorite shop","latitude":62.6296,"longitude":29.7064}];
 
-    var xhttp = new XMLHttpRequest()
-
     updateList(places,document.getElementById("places"));
 }
 
