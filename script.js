@@ -14,49 +14,11 @@ function main(){
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
 
-    //handleGeolocation(mymap);
+    places=[{"id":1,"user":"Radu","title":"favorite beach","latitude":62.6126,"longitude":29.696},{"id":2,"user":"Jyri","title":"favorite pizza place","latitude":62.6009,"longitude":29.7598},{"id":3,"user":"Petri","title":"favorite hiking place","latitude":62.6277,"longitude":29.8759},{"id":4,"user":"Radu","title":"favorite swimming pool","latitude":62.6031,"longitude":29.7443},{"id":32,"user":"Radu","title":"favorite shop","latitude":62.6296,"longitude":29.7064}];
 
     var xhttp = new XMLHttpRequest()
 
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            places = JSON.parse(this.responseText)
-                updateList(places,document.getElementById("places"));
-
-                document.addEventListener("locationChange",(e)=>{
-                    updateList(places,document.getElementById("places"));
-                })
-
-                updateMap(places,mymap);
-        }
-    }
-
-    xhttp.open('GET', 'http://localhost:3001/api/places', true)
-    xhttp.send()
-}
-
-const handleGeolocation=(map)=>{
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-    } else {
-
-    }
-}
-
-const showPosition=(position)=>{
-    if(user.marker==null){
-        user.marker=L.marker([position.coords.latitude,position.coords.longitude],{
-            icon:L.divIcon({
-                html:"<div class='usermarkericon'>😊</div>"
-            }),
-            title:"You"
-        }).addTo(mymap);
-    }else{
-        user.marker.setLatLng([position.coords.latitude,position.coords.longitude]);
-    }
-    document.dispatchEvent(new CustomEvent("locationChange",{
-        detail:position.coords
-    }) );
+    updateList(places,document.getElementById("places"));
 }
 
 const clickListItem=placeId=>{
@@ -83,16 +45,6 @@ const updateList=(places,div)=>{
         html+="<br>"
     });
     div.innerHTML=html;
-}
-
-const formatDistance=(distInKm)=>{
-    if(distInKm<1){
-        return Math.floor(distInKm*1000)+" meters";
-    }else if(distInKm<100){
-        return distInKm.toFixed(1)+" km";
-    }else{
-        return distInKm.toFixed(0)+" km";
-    }
 }
 
 const updateMap=(places,map)=>{
