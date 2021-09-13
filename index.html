@@ -1,0 +1,31 @@
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Places App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <script src="geo.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body onload="main()">
+    <!-- Header -->
+    <header class="header wrapper">
+        Places App
+    </header>
+
+    <div class="flex-container wrapper">
+        <!-- Content -->
+        <div id="places" class="list-part"></div>
+
+        <!-- Sidebar -->
+        <div id="mapid" class="map-part"></div>
+
+    </div>
+</body>
+
+</html>

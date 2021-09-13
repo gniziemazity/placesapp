@@ -1,0 +1,100 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.wrapper {
+    padding:10px;
+}
+
+.header {
+    background: #0086c4;
+    color:white;
+    height:50px;
+    font-size: 30px;
+}
+
+.list-part {
+    flex: 0 1 300px;
+    margin-bottom: 10px;
+    margin-right: 0;
+}
+
+@media screen and (min-width:640px) {
+    .flex-container {
+        display: flex;
+        height: calc(100% - 50px);
+    }
+    .list-part {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+}
+
+
+.map-part {
+    flex: 1;
+    background: #673ab7;
+}
+
+div {
+    margin: 0;
+}
+
+#mapid {
+    min-height: 500px;
+}
+
+.username{
+    font-weight: bold;
+}
+.placetitle{
+    
+}
+.coordinates{
+    font-family: 'Courier New', Courier, monospace;
+}
+.distance{
+    font-weight: bold;
+    color: #0086c4;
+}
+
+.section-title{
+    font-size:20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.listitem{
+    background-color: #03a8f475;
+    border-radius: 5px;
+    padding:5px;
+    cursor: pointer;
+}
+
+.markericon,.usermarkericon{
+    background-color: #0086c4;
+    border-radius: 15px;
+    border: 2px solid white;
+    width:30px;
+    height: 30px;
+    transform:translate(-10px,-10px);
+    text-align:center;
+    padding: 0px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.usermarkericon{
+    background-color: white;
+}
+
