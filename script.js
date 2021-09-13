@@ -14,7 +14,7 @@ function main(){
         attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(mymap);
 
-    handleGeolocation(mymap);
+    //handleGeolocation(mymap);
 
     var xhttp = new XMLHttpRequest()
 
